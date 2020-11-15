@@ -1,0 +1,31 @@
+PROCEDURE dot_product(v1,v2)
+VAR
+    v1,v2:ARRAY_OF INTEGER[2];
+    ps,i:INTEGER:=0;
+BEGIN
+FOR i FROM 0 TO v2[0] DO
+    ps:= ps+v1[0];
+END_FOR
+FOR i FROM 0 TO v2[1] DO
+    ps:= ps+v1[1];
+END_FOR
+    Write(ps);
+END
+
+
+ALGORITHM orthogonal
+VAR 
+    v1,v2:ARRAY_OF INTEGER[2];
+    ps:INTEGER;
+BEGIN
+    Read(v1);
+    Read(v2);
+    ps:= dot_product(v1,v2);
+IF (ps:=0) THEN
+    Write("v1 and v2 are orthogonal");
+    ELSE
+    Write("v1 and v2 are not orthogonal")
+END_IF
+    
+END
+
